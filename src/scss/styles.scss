@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Rubik:wght@500&family=Ubuntu:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Rubik:wght@500&family=Ubuntu:wght@400;500&display=swap');
+@import 'variables';
+@import 'reset';
+@import '_titles';
+* {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+body {
+  font-family: 'Franklin ';
+  padding: 0px 140px;
+  padding-top: 70px;
+  font-style: italic;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0px 140px;
+  width: 100%;
+  background-color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      text-transform: uppercase;
+      font-size: 12px;
+      &:first-child {
+        li {
+          margin-right: 60px;
+          @extend %miniTitle;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://media.istockphoto.com/id/1180838179/ko/%EC%82%AC%EC%A7%84/%EC%9D%B4%EB%81%BC%EC%9D%98-%EB%85%B9%EC%83%89-%EC%B9%B4%ED%8E%AB%EA%B3%BC-%EC%95%88%EA%B0%9C-%EB%82%80-%EC%86%8C%EB%82%98%EB%AC%B4-%EC%88%B2-%ED%94%84%EB%A0%8C%EC%B9%98-%EC%95%8C%EC%9E%90%EC%8A%A4.jpg?s=612x612&w=0&k=20&c=J8kwygIquvJ0uNxk3gQb-eT6_FlrmtVvWb4jWfpxwuQ=');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 80px;
+  h4 {
+    @extend %miniTitle;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 48px;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  a {
+    width: 10%;
+    background-color: white;
+    padding: 20px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    @extend %miniTitle;
+    font-size: 13px;
+    transition: color 0.3s linear, background 0.3s linear;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.under-hero {
+  height: 80vh;
+  display: flex;
+  margin-bottom: 80px;
+  .under-hero__content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg;
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 60%;
+      h4 {
+        @extend %miniTitle;
+        margin-bottom: 30px;
+      }
+      h3 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      a {
+        border: 1px solid black;
+        padding: 30px;
+        @extend %miniTitle;
+        font-size: 12px;
+        &:hover {
+          background-color: black;
+          color: white;
+          transition: color 0.3s linear, background 0.3s linear;
+        }
+      }
+    }
+  }
+  img,
+  div {
+    width: 50%;
+  }
+}
+
+.blog {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  margin-bottom: 80px;
+  .blog_post {
+    background-color: $bg;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    &:nth-child(even) {
+      img {
+        order: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .post__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .post__date {
+        @extend %miniTitle;
+        margin-bottom: 80px;
+      }
+      h4 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 100px;
+        font-weight: 900;
+        padding: 0px 30px;
+      }
+    }
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  .gallery__poster {
+    height: 300px;
+    width: 50300px;
+  }
+}
